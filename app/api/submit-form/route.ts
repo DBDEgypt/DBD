@@ -6,6 +6,7 @@ const ALLOWED_ORIGINS = [
   'http://localhost:3000',
   'http://localhost:3001',
   process.env.NEXT_PUBLIC_SITE_URL,
+  'https://dbd-system.netlify.app',
 ].filter(Boolean)
 
 function isValidEmail(email: string): boolean {
