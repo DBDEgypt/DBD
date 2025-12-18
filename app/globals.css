@@ -1,0 +1,269 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-Thin-Trial.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-ThinItalic-Trial.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-Extralight-Trial.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-ExtralightItalic-Trial.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-Light-Trial.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-LightItalic-Trial.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-Regular-Trial.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-RegularItalic-Trial.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-Medium-Trial.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-MediumItalic-Trial.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-Semibold-Trial.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-SemiboldItalic-Trial.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-Bold-Trial.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-BoldItalic-Trial.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-Black-Trial.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-BlackItalic-Trial.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-Super-Trial.otf') format('opentype');
+  font-weight: 950;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Graphik Compact Trial';
+  src: url('/fonts/GraphikCompact-SuperItalic-Trial.otf') format('opentype');
+  font-weight: 950;
+  font-style: italic;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Graphik Compact Trial', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  background: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+  font-family: 'Graphik Compact Trial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: dark;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, #0a0a12 0%, #050508 40%, #000000 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+[data-framer-component] {
+  will-change: transform, opacity;
+}
+
+img, video {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(to bottom, transparent, rgba(10, 10, 18, 0.3));
+  pointer-events: none;
+}
+
+[dir="ltr"] { direction: ltr; }
+[dir="rtl"] { direction: rtl; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #000000; }
+::-webkit-scrollbar-thumb { background: #3634e3; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #5a58ff; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fadeInUp { animation: fadeInUp 0.6s ease-out; }
+.animate-pulse-slow { animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.perspective-1000 { perspective: 1000px; }
+.parallax-container { transform-style: preserve-3d; }
+
+.triangle { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+.diamond { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+.hexagon { clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%); }
+
+.text-accent { color: #3634e3; }
+.text-accent-light { color: #5a58ff; }
+.text-accent-medium { color: #4a48d0; }
+.text-accent-dark { color: #2a28b8; }
+.accent-highlight { color: #3634e3; font-weight: 600; }
+
+button {
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:focus-visible {
+  outline: 2px solid #3634e3;
+  outline-offset: 2px;
+}
+
+section {
+  scroll-margin-top: 80px;
+  position: relative;
+  isolation: isolate;
+}
+
+section + section { margin-top: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
