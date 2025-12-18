@@ -14,21 +14,21 @@ export default function AnimatedBackground({ sectionId = 'default' }: AnimatedBa
         style={{ background: 'radial-gradient(ellipse at center, #0a0a14 0%, #050508 40%, #000000 100%)' }}
       />
 
-      <motion.div
-        className="absolute inset-0"
-        style={{
+            <motion.div
+              className="absolute inset-0"
+              style={{
           background: 'radial-gradient(ellipse 80% 50% at 50% 50%, rgba(54, 52, 227, 0.12) 0%, transparent 70%)',
           willChange: 'opacity, transform',
-        }}
+              }}
         animate={{ opacity: [0.3, 0.5, 0.3], scale: [1, 1.1, 1] }}
         transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
       />
 
-      <motion.div
-        style={{
+          <motion.div
+            style={{
           willChange: 'transform',
           background: 'radial-gradient(circle, rgba(54, 52, 227, 0.35) 0%, rgba(54, 52, 227, 0.1) 50%, transparent 100%)',
-        }}
+            }}
         animate={{ x: [0, 100, -50, 0], y: [0, 80, -40, 0], scale: [1, 1.2, 0.9, 1] }}
         transition={{ duration: 25, repeat: Infinity, ease: 'easeInOut' }}
         className="absolute top-20 left-10 w-96 h-96 rounded-full blur-3xl opacity-30"

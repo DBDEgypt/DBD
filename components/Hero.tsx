@@ -177,10 +177,10 @@ export default function Hero() {
           </motion.p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
           className="w-full mb-6 relative z-20"
         >
           <div className="bg-gradient-to-br from-black/70 to-black/50 rounded-2xl p-2 shadow-2xl border border-primary/20 mx-auto max-w-3xl">
@@ -227,8 +227,8 @@ export default function Hero() {
             className="px-8 py-4 bg-primary hover:bg-primary/80 text-white font-bold rounded-lg transition-all shadow-lg text-base md:text-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-          >
-            {language === 'ar' ? 'سجل الآن' : 'Enroll Now'}
+            >
+              {language === 'ar' ? 'سجل الآن' : 'Enroll Now'}
           </motion.button>
         </motion.div>
       </div>

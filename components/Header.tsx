@@ -27,8 +27,8 @@ export default function Header() {
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i])
         if (section && scrollPosition >= section.offsetTop) {
-          setActiveSection(sections[i])
-          break
+            setActiveSection(sections[i])
+            break
         }
       }
     }
@@ -119,7 +119,7 @@ export default function Header() {
                 >
                   {item.label}
                   <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                    isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
                   }`} />
                 </motion.a>
               )

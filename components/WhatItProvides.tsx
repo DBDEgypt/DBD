@@ -192,21 +192,21 @@ export default function WhatItProvides() {
             {text.features.map((feature, index) => {
               const Icon = feature.icon
               return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: language === 'ar' ? 50 : -50 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.9 + index * 0.1, type: 'spring' }}
-                  whileHover={{ scale: 1.05, x: language === 'ar' ? -5 : 5 }}
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: language === 'ar' ? 50 : -50 }}
+                animate={inView ? { opacity: 1, x: 0 } : {}}
+                transition={{ delay: 0.9 + index * 0.1, type: 'spring' }}
+                whileHover={{ scale: 1.05, x: language === 'ar' ? -5 : 5 }}
                   className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md rounded-xl p-6 border border-white/20 hover:border-primary/40 transition-all shadow-lg"
-                >
+              >
                   <div className="flex items-center gap-4">
                     <div className="flex-shrink-0 w-14 h-14 bg-primary/20 rounded-lg flex items-center justify-center">
                       <Icon className="text-primary text-2xl" />
                     </div>
                     <p className="text-white text-lg font-semibold">{feature.text}</p>
                   </div>
-                </motion.div>
+              </motion.div>
               )
             })}
           </div>
@@ -224,8 +224,8 @@ export default function WhatItProvides() {
             className="px-10 py-5 bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 text-white text-xl font-bold rounded-xl transition-all shadow-2xl"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-          >
-            {language === 'ar' ? 'سجل الآن' : 'Enroll Now'}
+            >
+              {language === 'ar' ? 'سجل الآن' : 'Enroll Now'}
           </motion.button>
         </motion.div>
       </div>

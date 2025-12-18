@@ -2,12 +2,21 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const APPS_SCRIPT_URL = process.env.GOOGLE_APPS_SCRIPT_URL
 
-const ALLOWED_ORIGINS = [
-  'http://localhost:3000',
-  'http://localhost:3001',
-  process.env.NEXT_PUBLIC_SITE_URL,
-  'https://dbd-system.netlify.app',
-].filter(Boolean)
+function isAllowedOrigin(origin: string | null): boolean {
+  if (!origin) return true
+  
+  const allowedPatterns = [
+    /^http:\/\/localhost:\d+$/,
+    /^https:\/\/.*\.netlify\.app$/,
+    /^https:\/\/.*\.netlify\.com$/,
+  ]
+  
+  if (process.env.NEXT_PUBLIC_SITE_URL && origin === process.env.NEXT_PUBLIC_SITE_URL) {
+    return true
+  }
+  
+  return allowedPatterns.some(pattern => pattern.test(origin))
+}
 
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
@@ -24,7 +33,7 @@ function sanitizeInput(input: string): string {
 export async function POST(request: NextRequest) {
   try {
     const origin = request.headers.get('origin')
-    if (origin && !ALLOWED_ORIGINS.includes(origin)) {
+    if (!isAllowedOrigin(origin)) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 
