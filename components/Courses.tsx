@@ -150,11 +150,11 @@ export default function Courses() {
                             transition={{ delay: index * 0.1, duration: 0.5 }}
                             whileHover={{ scale: 1.03, y: -8 }}
                             whileTap={{ scale: 0.98 }}
-                            className="group block"
+                            className="group block h-full"
                         >
-                            <div className="bg-white/5 backdrop-blur-md rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20">
+                            <div className="bg-white/5 backdrop-blur-md rounded-2xl overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 h-full flex flex-col">
                                 {/* Course Image */}
-                                <div className="relative aspect-video overflow-hidden">
+                                <div className="relative aspect-video overflow-hidden flex-shrink-0">
                                     <Image
                                         src={course.image}
                                         alt={language === 'ar' ? course.titleAr : course.titleEn}
@@ -176,16 +176,16 @@ export default function Courses() {
                                 </div>
 
                                 {/* Course Info */}
-                                <div className="p-6">
-                                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                                <div className="p-6 flex flex-col flex-grow">
+                                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors min-h-[3.5rem] line-clamp-2">
                                         {language === 'ar' ? course.titleAr : course.titleEn}
                                     </h3>
-                                    <p className="text-white/60 text-sm line-clamp-2 mb-4">
+                                    <p className="text-white/60 text-sm line-clamp-2 mb-4 min-h-[2.5rem]">
                                         {language === 'ar' ? course.subtitleAr : course.subtitleEn}
                                     </p>
 
-                                    {/* CTA */}
-                                    <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                                    {/* CTA - pushed to bottom */}
+                                    <div className="flex items-center justify-between pt-4 border-t border-white/10 mt-auto">
                                         <span className="text-primary font-semibold text-sm group-hover:underline">
                                             {text.viewCourse}
                                         </span>
