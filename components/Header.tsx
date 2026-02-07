@@ -15,24 +15,23 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
-      
+
       const sections = [
-        'home', 'who-is-it-for', 'why-enroll', 'what-result-you-get',
-        'results', 'what-it-provides', 'about', 'reviews',
-        'guarantee', 'packages', 'faq', 'contact'
+        'home', 'who-is-it-for', 'what-it-provides', 'about',
+        'reviews', 'courses', 'faq', 'contact'
       ]
-      
+
       const scrollPosition = window.scrollY + 150
-      
+
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = document.getElementById(sections[i])
         if (section && scrollPosition >= section.offsetTop) {
-            setActiveSection(sections[i])
-            break
+          setActiveSection(sections[i])
+          break
         }
       }
     }
-    
+
     window.addEventListener('scroll', handleScroll)
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
@@ -42,28 +41,20 @@ export default function Header() {
     ar: [
       { href: '#home', label: 'الرئيسية' },
       { href: '#who-is-it-for', label: 'لمن النظام' },
-      { href: '#why-enroll', label: 'لماذا التسجيل' },
-      { href: '#what-result-you-get', label: 'النتيجة' },
-      { href: '#results', label: 'نتائج الأطباء' },
       { href: '#what-it-provides', label: 'المحتوى' },
       { href: '#about', label: 'عن د. عمر' },
       { href: '#reviews', label: 'آراء الأطباء' },
-      { href: '#guarantee', label: 'الضمان' },
-      { href: '#packages', label: 'الباقات' },
+      { href: '#courses', label: 'الكورسات' },
       { href: '#faq', label: 'الأسئلة' },
       { href: '#contact', label: 'تواصل معنا' },
     ],
     en: [
       { href: '#home', label: 'Home' },
       { href: '#who-is-it-for', label: 'Who Is It For' },
-      { href: '#why-enroll', label: 'Why Enroll' },
-      { href: '#what-result-you-get', label: 'Results You Get' },
-      { href: '#results', label: 'Doctors Results' },
       { href: '#what-it-provides', label: 'Content' },
       { href: '#about', label: 'About Dr. Omar' },
       { href: '#reviews', label: 'Reviews' },
-      { href: '#guarantee', label: 'Guarantee' },
-      { href: '#packages', label: 'Packages' },
+      { href: '#courses', label: 'Courses' },
       { href: '#faq', label: 'FAQ' },
       { href: '#contact', label: 'Contact' },
     ],
@@ -76,11 +67,10 @@ export default function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? 'bg-gradient-to-b from-black/90 via-black/70 to-transparent backdrop-blur-sm'
           : 'bg-gradient-to-b from-black/60 via-black/40 to-transparent backdrop-blur-sm'
-      }`}
+        }`}
       style={{
         background: isScrolled
           ? 'linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 50%, transparent 100%)'
@@ -113,14 +103,12 @@ export default function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className={`font-medium transition-colors relative group ${
-                    isActive ? 'text-primary font-bold' : 'text-white/90 hover:text-primary'
-                  }`}
+                  className={`font-medium transition-colors relative group ${isActive ? 'text-primary font-bold' : 'text-white/90 hover:text-primary'
+                    }`}
                 >
                   {item.label}
-                  <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`} />
+                  <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`} />
                 </motion.a>
               )
             })}
@@ -170,9 +158,8 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block py-2 font-medium transition-colors ${
-                    isActive ? 'text-primary font-bold' : 'text-white/90 hover:text-primary'
-                  }`}
+                  className={`block py-2 font-medium transition-colors ${isActive ? 'text-primary font-bold' : 'text-white/90 hover:text-primary'
+                    }`}
                 >
                   {item.label}
                 </a>

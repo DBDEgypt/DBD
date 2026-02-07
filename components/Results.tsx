@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useLanguage } from '@/context/LanguageContext'
 import { useInView } from 'react-intersection-observer'
 import { useRef } from 'react'
-import { FaDollarSign, FaUsers, FaClock, FaBullseye } from 'react-icons/fa'
+import { FaUsers, FaBullseye } from 'react-icons/fa'
 import AnimatedBackground from './AnimatedBackground'
 import { useModal } from '@/context/ModalContext'
 
@@ -26,9 +26,7 @@ export default function Results() {
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 1, 0])
 
   const icons = [
-    { Icon: FaDollarSign, color: 'text-primary' },
-    { Icon: FaUsers, color: 'text-accent-light' },
-    { Icon: FaClock, color: 'text-primary' },
+    { Icon: FaUsers, color: 'text-primary' },
     { Icon: FaBullseye, color: 'text-accent-light' },
   ]
 
@@ -36,22 +34,18 @@ export default function Results() {
     ar: {
       title: 'نتائج الأطباء المسجلين في النظام',
       results: [
-        { text: 'زيادة في الأرباح بنسبة +55% إلى +80% خلال أول 90 يوم' },
         { text: 'زيادة عدد المرضى الجدد بنسبة +60%' },
-        { text: 'تقليل الفوضى الإدارية بنسبة 70%' },
         { text: 'نظام عمل يومي واضح للفريق والمرضى' },
       ],
-      note: 'النظام أثبت فعاليته في أكثر من 30 عيادة في مصر والخليج.',
+      note: 'النظام أثبت فعاليته في أكثر من 50 عيادة في مصر والخليج.',
     },
     en: {
       title: 'Results of Dentists Enrolled in the System',
       results: [
-        { text: 'Profit increase of +55% to +80% within the first 90 days' },
         { text: 'Increase in new patients by +60%' },
-        { text: 'Reduction in administrative chaos by 70%' },
         { text: 'Clear daily work system for team and patients' },
       ],
-      note: 'The system has proven its effectiveness in more than 30 clinics in Egypt and the Gulf.',
+      note: 'The system has proven its effectiveness in more than 50 clinics in Egypt and the Gulf.',
     },
   }
 

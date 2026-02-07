@@ -8,8 +8,7 @@ import Results from '@/components/Results'
 import WhatItProvides from '@/components/WhatItProvides'
 import AboutDrOmar from '@/components/AboutDrOmar'
 import Reviews from '@/components/Reviews'
-import Guarantee from '@/components/Guarantee'
-import Packages from '@/components/Packages'
+import Courses from '@/components/Courses'
 import FAQ from '@/components/FAQ'
 import EmotionalClose from '@/components/EmotionalClose'
 import Contact from '@/components/Contact'
@@ -27,7 +26,7 @@ function HomeContent() {
     openModal()
   })
 
-  const modalTitle = language === 'ar' 
+  const modalTitle = language === 'ar'
     ? 'عرض خاص! سجل الآن واحصل على خصم حصري'
     : 'Special Offer! Register Now and Get an Exclusive Discount'
 
@@ -43,8 +42,7 @@ function HomeContent() {
         <WhatItProvides />
         <AboutDrOmar />
         <Reviews />
-        <Guarantee />
-        <Packages />
+        <Courses />
         <FAQ />
         <EmotionalClose />
         <Contact />
@@ -62,4 +60,5 @@ export default function Home() {
     </LanguageProvider>
   )
 }
+
 
